@@ -11,6 +11,7 @@ import com.example.movies.data.api.RetrofitBuilder
 import com.example.movies.data.model.Movie
 import com.example.movies.databinding.ActivityMainBinding
 import com.example.movies.utils.MoviesUiState
+import com.example.movies.utils.NavigationHelper
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +34,11 @@ class MainActivity : AppCompatActivity() {
             is MoviesUiState.Success -> {
                 binding.progressBar.visibility = View.GONE
                 binding.rvMovies.visibility = View.VISIBLE
-                binding.rvMovies.adapter = MoviesAdapter(state.data as ArrayList<Movie>)
+                binding.rvMovies.adapter = MoviesAdapter(state.data as ArrayList<Movie>, object: IMovieClickListener {
+                    override fun onMovieClicked(id: Int) {
+                        NavigationHelper.goToMovieDetails(this@MainActivity, id)
+                    }
+                })
             }
 
             is MoviesUiState.Error -> {

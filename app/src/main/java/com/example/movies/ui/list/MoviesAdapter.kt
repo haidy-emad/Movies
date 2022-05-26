@@ -9,9 +9,9 @@ import com.example.movies.databinding.ItemMovieBinding
 
 private const val imagesBaseUrl = "https://image.tmdb.org/t/p/w500/"
 
-class MoviesAdapter(private val movies: ArrayList<Movie>) : RecyclerView.Adapter<MoviesAdapter.DataViewHolder>() {
+class MoviesAdapter(private val movies: ArrayList<Movie>, private val movieClickListener: IMovieClickListener) : RecyclerView.Adapter<MoviesAdapter.DataViewHolder>() {
 
-    class DataViewHolder(private val itemBinding: ItemMovieBinding) : RecyclerView.ViewHolder(itemBinding.root) {
+    inner class DataViewHolder(private val itemBinding: ItemMovieBinding) : RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(movie: Movie) {
             itemBinding.apply {
@@ -20,6 +20,10 @@ class MoviesAdapter(private val movies: ArrayList<Movie>) : RecyclerView.Adapter
                 Glide.with(ivPoster.context)
                     .load(imagesBaseUrl + movie.poster_path)
                     .into(ivPoster)
+
+                root.setOnClickListener {
+                    movieClickListener.onMovieClicked(movie.id)
+                }
             }
         }
     }

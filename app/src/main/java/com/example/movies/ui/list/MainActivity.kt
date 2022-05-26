@@ -1,20 +1,27 @@
-package com.example.movies
+package com.example.movies.ui.list
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movies.R
 import com.example.movies.data.api.ApiHelper
 import com.example.movies.data.api.RetrofitBuilder
+import com.example.movies.data.model.Movie
+import com.example.movies.databinding.ActivityMainBinding
 import com.example.movies.utils.MoviesUiState
 
 class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MainViewModel> { MainViewModelFactory(ApiHelper(RetrofitBuilder.apiService)) }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         viewModel.getUiState().observe(this) {
             renderMoviesUiState(it)
@@ -24,8 +31,9 @@ class MainActivity : AppCompatActivity() {
     private fun renderMoviesUiState(state: MoviesUiState) {
         when (state) {
             is MoviesUiState.Success -> {
-                // todo - show on screen
-                Toast.makeText(this, state.data.toString(), Toast.LENGTH_SHORT).show()
+                binding.progressBar.visibility = View.GONE
+                binding.rvMovies.visibility = View.VISIBLE
+                binding.rvMovies.adapter = MoviesAdapter(state.data as ArrayList<Movie>)
             }
 
             is MoviesUiState.Error -> {

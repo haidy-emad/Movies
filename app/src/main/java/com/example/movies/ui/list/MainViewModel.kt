@@ -1,4 +1,4 @@
-package com.example.movies
+package com.example.movies.ui.list
 
 import androidx.lifecycle.*
 import com.example.movies.data.api.ApiHelper

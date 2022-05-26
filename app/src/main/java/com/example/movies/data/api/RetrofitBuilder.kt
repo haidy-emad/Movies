@@ -1,6 +1,5 @@
 package com.example.movies.data.api
 
-import android.content.Context
 import com.example.movies.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -30,6 +29,15 @@ object RetrofitBuilder {
         }
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
+            .addInterceptor { chain ->
+                val url = chain
+                    .request()
+                    .url
+                    .newBuilder()
+                    .addQueryParameter("api_key", "c9856d0cb57c3f14bf75bdc6c063b8f3")
+                    .build()
+                chain.proceed(chain.request().newBuilder().url(url).build())
+            }
             .build()
     }
 }

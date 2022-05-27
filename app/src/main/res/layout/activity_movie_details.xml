@@ -6,4 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".ui.details.MovieDetailsActivity">
 
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h,2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image"
+        tools:text="The Lost City" />
+
+    <TextView
+        android:id="@+id/tv_genre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="Action" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_genre"
+        app:layout_constraintStart_toStartOf="@id/tv_genre"
+        app:layout_constraintEnd_toEndOf="@id/tv_genre"
+        android:layout_marginTop="8dp"
+        app:drawableStartCompat="@drawable/ic_baseline_star_rate_24"
+        app:drawableTint="@color/gold"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        tools:text="8 / 10"/>
+
+    <TextView
+        android:id="@+id/lbl_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/lbl_country"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="@string/year"/>
+
+    <TextView
+        android:id="@+id/lbl_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/lbl_year"
+        app:layout_constraintStart_toEndOf="@id/lbl_year"
+        app:layout_constraintEnd_toStartOf="@id/lbl_min"
+        android:gravity="center"
+        android:text="@string/country"/>
+
+    <TextView
+        android:id="@+id/lbl_min"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/lbl_year"
+        app:layout_constraintStart_toEndOf="@id/lbl_country"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="@string/min"/>
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lbl_year"
+        app:layout_constraintEnd_toEndOf="@id/lbl_year"
+        app:layout_constraintTop_toBottomOf="@id/lbl_year"
+        android:gravity="center"
+        tools:text="2019"/>
+
+    <TextView
+        android:id="@+id/tv_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lbl_country"
+        app:layout_constraintEnd_toEndOf="@id/lbl_country"
+        app:layout_constraintTop_toBottomOf="@id/lbl_country"
+        android:gravity="center"
+        tools:text="America"/>
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lbl_min"
+        app:layout_constraintEnd_toEndOf="@id/lbl_min"
+        app:layout_constraintTop_toBottomOf="@id/lbl_min"
+        android:gravity="center"
+        tools:text="50m"/>
+
+    <TextView
+        android:id="@+id/tv_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_country"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="@id/tv_title"
+        android:layout_marginTop="16dp"
+        tools:text="A reclusive romance novelist was sure nothing could be worse than getting stuck on a book tour with her cover model until a kidnapping attempt sweeps them both into a cutthroat jungle adventure, proving life can be so much stranger, and more romantic, than any of her paperback fictions."/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

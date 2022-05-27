@@ -2,4 +2,8 @@
     <string name="app_name">Movies</string>
     <string name="error_something_went_wrong">Something went wrong</string>
     <string name="explore">Explore</string>
+    <string name="year">Year</string>
+    <string name="country">Country</string>
+    <string name="min">Min</string>
+    <string name="duration_value">%1$dh %2$dm</string>
 </resources>

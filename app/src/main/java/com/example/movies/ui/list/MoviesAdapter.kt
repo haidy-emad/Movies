@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movies.data.model.Movie
 import com.example.movies.databinding.ItemMovieBinding
-
-private const val imagesBaseUrl = "https://image.tmdb.org/t/p/w500/"
+import com.example.movies.utils.Constants
+import com.example.movies.utils.Constants.imagesBaseUrl
 
 class MoviesAdapter(private val movies: ArrayList<Movie>, private val movieClickListener: IMovieClickListener) : RecyclerView.Adapter<MoviesAdapter.DataViewHolder>() {
 

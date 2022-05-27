@@ -6,4 +6,6 @@ class MoviesRepository (private val apiHelper: ApiHelper) {
 
     suspend fun getMovies() = apiHelper.getMovies()
 
+    suspend fun getMovieDetails(id: Int) = apiHelper.getMovieDetails(id)
+
 }

@@ -120,13 +120,34 @@
     <TextView
         android:id="@+id/tv_overview"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/tv_country"
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintEnd_toEndOf="@id/tv_title"
+        app:layout_constraintBottom_toTopOf="@id/btn_imdb"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
         tools:text="A reclusive romance novelist was sure nothing could be worse than getting stuck on a book tour with her cover model until a kidnapping attempt sweeps them both into a cutthroat jungle adventure, proving life can be so much stranger, and more romantic, than any of her paperback fictions."/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_imdb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_homepage"
+        android:text="@string/view_on_imdb"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_homepage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toEndOf="@id/btn_imdb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/homepage"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -141,7 +162,7 @@
         android:id="@+id/group_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="iv_image,tv_title,tv_genre,tv_rating,lbl_year,lbl_country,lbl_min,tv_year,tv_country,tv_duration,tv_overview"
+        app:constraint_referenced_ids="iv_image,tv_title,tv_genre,tv_rating,lbl_year,lbl_country,lbl_min,tv_year,tv_country,tv_duration,tv_overview,btn_imdb,btn_homepage"
         android:visibility="gone"
         tools:visibility="visible"/>
 

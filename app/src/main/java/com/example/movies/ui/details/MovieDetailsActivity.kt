@@ -13,6 +13,7 @@ import com.example.movies.data.model.MovieDetails
 import com.example.movies.databinding.ActivityMovieDetailsBinding
 import com.example.movies.utils.Constants
 import com.example.movies.utils.MovieDetailsUiState
+import com.example.movies.utils.NavigationHelper
 
 class MovieDetailsActivity : AppCompatActivity() {
 
@@ -70,6 +71,9 @@ class MovieDetailsActivity : AppCompatActivity() {
             binding.tvCountry.text = production_countries.joinToString { it.name }
             binding.tvDuration.text = getDuration(runtime)
             binding.tvOverview.text = overview
+
+            binding.btnHomepage.setOnClickListener { NavigationHelper.openMovieHomepage(this@MovieDetailsActivity, homepage) }
+            binding.btnImdb.setOnClickListener { NavigationHelper.openImdbPage(this@MovieDetailsActivity, imdb_id) }
         }
     }
 

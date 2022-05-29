@@ -23,8 +23,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_image"
@@ -37,6 +38,7 @@
         app:layout_constraintEnd_toEndOf="@id/tv_title"
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:textColor="@color/black"
         tools:text="Action" />
 
     <TextView
@@ -51,16 +53,17 @@
         app:drawableTint="@color/gold"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
+        android:textColor="@color/black"
         tools:text="8 / 10"/>
 
     <TextView
         android:id="@+id/lbl_year"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsLabelStyle"
         app:layout_constraintTop_toBottomOf="@id/tv_rating"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/lbl_country"
-        android:gravity="center"
         android:layout_marginTop="8dp"
         android:text="@string/year"/>
 
@@ -68,50 +71,50 @@
         android:id="@+id/lbl_country"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsLabelStyle"
         app:layout_constraintBaseline_toBaselineOf="@id/lbl_year"
         app:layout_constraintStart_toEndOf="@id/lbl_year"
         app:layout_constraintEnd_toStartOf="@id/lbl_min"
-        android:gravity="center"
         android:text="@string/country"/>
 
     <TextView
         android:id="@+id/lbl_min"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsLabelStyle"
         app:layout_constraintBaseline_toBaselineOf="@id/lbl_year"
         app:layout_constraintStart_toEndOf="@id/lbl_country"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
         android:text="@string/min"/>
 
     <TextView
         android:id="@+id/tv_year"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsInfoStyle"
         app:layout_constraintStart_toStartOf="@id/lbl_year"
         app:layout_constraintEnd_toEndOf="@id/lbl_year"
         app:layout_constraintTop_toBottomOf="@id/lbl_year"
-        android:gravity="center"
         tools:text="2019"/>
 
     <TextView
         android:id="@+id/tv_country"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsInfoStyle"
         app:layout_constraintStart_toStartOf="@id/lbl_country"
         app:layout_constraintEnd_toEndOf="@id/lbl_country"
         app:layout_constraintTop_toBottomOf="@id/lbl_country"
-        android:gravity="center"
         tools:text="America"/>
 
     <TextView
         android:id="@+id/tv_duration"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/DetailsInfoStyle"
         app:layout_constraintStart_toStartOf="@id/lbl_min"
         app:layout_constraintEnd_toEndOf="@id/lbl_min"
         app:layout_constraintTop_toBottomOf="@id/lbl_min"
-        android:gravity="center"
         tools:text="50m"/>
 
     <TextView
@@ -122,6 +125,7 @@
         app:layout_constraintStart_toStartOf="@id/tv_title"
         app:layout_constraintEnd_toEndOf="@id/tv_title"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         tools:text="A reclusive romance novelist was sure nothing could be worse than getting stuck on a book tour with her cover model until a kidnapping attempt sweeps them both into a cutthroat jungle adventure, proving life can be so much stranger, and more romantic, than any of her paperback fictions."/>
 
     <ProgressBar

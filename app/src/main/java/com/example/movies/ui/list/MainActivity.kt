@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 binding.rvMovies.visibility = View.VISIBLE
                 binding.rvMovies.adapter = MoviesAdapter(state.data as ArrayList<Movie>, object: IMovieClickListener {
-                    override fun onMovieClicked(id: Int) {
-                        NavigationHelper.goToMovieDetails(this@MainActivity, id)
+                    override fun onMovieClicked(movie: Movie) {
+                        NavigationHelper.goToMovieDetails(this@MainActivity, movie)
                     }
                 })
             }

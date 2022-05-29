@@ -25,12 +25,16 @@ class MovieDetailsActivity : AppCompatActivity() {
     private val movieID: Int by lazy {
         intent.getIntExtra(Constants.movieId, 0)
     }
+    private val movieTitle: String by lazy {
+        intent.getStringExtra(Constants.movieTitle) ?: ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieDetailsBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        supportActionBar?.title = movieTitle
 
         viewModel.getUiState().observe(this) {
             renderMovieDetailsUiState(it)

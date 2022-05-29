@@ -22,7 +22,7 @@ class MoviesAdapter(private val movies: ArrayList<Movie>, private val movieClick
                     .into(ivPoster)
 
                 root.setOnClickListener {
-                    movieClickListener.onMovieClicked(movie.id)
+                    movieClickListener.onMovieClicked(movie)
                 }
             }
         }

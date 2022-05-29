@@ -1,6 +1,7 @@
 package com.example.movies.ui.details
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -45,14 +46,15 @@ class MovieDetailsActivity : AppCompatActivity() {
             }
 
             is MovieDetailsUiState.Error -> {
+                binding.progressBar.visibility = View.GONE
                 Toast.makeText(this, getString(R.string.error_something_went_wrong), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    // todo - show/hide loading
-
     private fun fillMovieDetails(movie: MovieDetails) {
+        binding.progressBar.visibility = View.GONE
+        binding.groupContent.visibility = View.VISIBLE
         with(movie) {
             Glide.with(binding.ivImage.context)
                 .load(Constants.imagesBaseUrl + backdrop_path)
